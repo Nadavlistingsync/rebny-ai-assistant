@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "key": "month",
+      "question": "What month is the lease dated?",
+      "type": "text"
+    },
+    {
+      "key": "day",
+      "question": "What day is the lease dated?",
+      "type": "text"
+    },
+    {
+      "key": "year",
+      "question": "What year is the lease dated?",
+      "type": "text"
+    },
+    {
+      "key": "owner_name",
+      "question": "Owner name(s)?",
+      "type": "text"
+    },
+    {
+      "key": "owner_address",
+      "question": "Is owner address same as unit address?",
+      "type": "yesno"
+    },
+    {
+      "key": "tenant_name",
+      "question": "Tenant’s name(s)?",
+      "type": "text"
+    },
+    {
+      "key": "tenant_address",
+      "question": "Tenant’s address?",
+      "type": "text"
+    },
+    {
+      "key": "lease_start",
+      "question": "What is the lease START date?",
+      "type": "text"
+    },
+    {
+      "key": "lease_end",
+      "question": "What is the lease END date?",
+      "type": "text"
+    },
+    {
+      "key": "rent_amount",
+      "question": "What is the rent amount (gross)?",
+      "type": "text"
+    }
+  ]
+}
