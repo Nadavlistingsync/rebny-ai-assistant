@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 // @ts-ignore
-import { leaseFieldCoordinates } from './coordinates';
+import { leaseFieldCoordinates } from '@/lib/coordinates';
 // @ts-ignore
 import questions from '../generate-lease/questions.json';
 
