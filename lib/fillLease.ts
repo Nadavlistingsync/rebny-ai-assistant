@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import { leaseFieldCoordinates } from '../../lib/coordinates';
-import questions from '../../../questions.json';
+import questions from '../questions.json';
 
 export async function generateLeasePDF() {
   // Load original blank lease PDF

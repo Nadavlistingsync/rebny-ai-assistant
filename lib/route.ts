@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 import fs from 'fs';
 import path from 'path';
-import { leaseFieldCoordinates } from './lib/coordinates';
-import questions from '../../../questions.json';
+import { leaseFieldCoordinates } from '../app/api/generate-lease/lib/coordinates';
+import questions from '../questions.json';
 
 export async function POST(req: Request) {
   const answers = await req.json();
