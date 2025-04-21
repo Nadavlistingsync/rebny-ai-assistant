@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export const metadata = {
   title: 'REBNY Lease Assistant',
   description: 'Auto-fill REBNY lease forms using AI.',

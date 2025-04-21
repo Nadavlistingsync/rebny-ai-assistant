@@ -1,0 +1,32 @@
+{
+  "name": "rebny-ai-assistant",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nadavlistingsync/rebny-ai-assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nadavlistingsync/rebny-ai-assistant/issues"
+  },
+  "homepage": "https://github.com/Nadavlistingsync/rebny-ai-assistant#readme",
+  "description": "",
+  "dependencies": {
+    "next": "^15.3.1",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.2",
+    "typescript": "5.8.3"
+  }
+}
