@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 // @ts-ignore
-import { leaseFieldCoordinates } from '@/lib/coordinates';
+import { leaseFieldCoordinates } from './coordinates';
 // @ts-ignore
-import questions from '../generate-lease/questions.json';
+import questions from './questions.json';
 
 export async function generateLeasePDF(): Promise<Uint8Array> {
   const pdfPath = path.join(process.cwd(), 'public', 'Combined_Condo_Lease.pdf');
