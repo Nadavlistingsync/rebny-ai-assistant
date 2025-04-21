@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     const data = await req.json(); // receives the form data
     const pdfBuffer = await generateLeasePDF(data); // pass data to the PDF generator
 
-    return NextResponse.from(pdfBuffer, {
+    return new NextResponse(pdfBuffer, {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
