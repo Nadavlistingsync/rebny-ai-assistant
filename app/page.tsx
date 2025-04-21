@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 // @ts-ignore
-import questionsData from '../questions.json';
+import questionsData from './lib/questions.json';
 
 type Question = {
   key: string;
