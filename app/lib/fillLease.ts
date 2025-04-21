@@ -15,6 +15,9 @@ export async function generateLeasePDF(): Promise<Uint8Array> {
   const fontSize = 10;
 
   for (const [field, value] of Object.entries(questions)) {
+      const coords = leaseFieldCoordinates[field];
+      if (!coords) continue;
+
       pages[coords.page].drawText(String(value), {
         x: coords.x,
         y: coords.y,
@@ -22,11 +25,7 @@ export async function generateLeasePDF(): Promise<Uint8Array> {
         font,
         color: rgb(0, 0, 0),
       });
-        color: rgb(0, 0, 0),
-      });
-    }
   }
 
   return pdfDoc.save();
 }
-
