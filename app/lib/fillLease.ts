@@ -14,7 +14,7 @@ export async function generateLeasePDF(data: Record<string, string>): Promise<Ui
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const fontSize = 10;
 
-  for (const q of questions) {
+  for (const q of questions.questions) {
     const value = data[q.key];
     const coords = leaseFieldCoordinates[q.key];
     if (!value || !coords) continue;
