@@ -33,7 +33,10 @@ const LeaseFormPage = () => {
       if (res.ok) {
         const blob = await res.blob();
         const url = window.URL.createObjectURL(blob);
-        window.open(url, '_blank');
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'REBNY_Lease.pdf';
+        a.click();
       } else {
         alert('Failed to generate lease PDF.');
       }
@@ -42,7 +45,7 @@ const LeaseFormPage = () => {
     }
   };
 
-  const questions = questionsData.questions as Question[];
+  const questions = Array.isArray(questionsData.questions) ? questionsData.questions as Question[] : [];
 
   return (
     <div className="max-w-3xl mx-auto p-10 bg-gray-50 min-h-screen">

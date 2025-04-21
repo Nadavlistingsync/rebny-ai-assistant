@@ -4,15 +4,17 @@ import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 // @ts-ignore
 import { leaseFieldCoordinates } from './coordinates';
 // @ts-ignore
-import questions from './lib/questions.json';
+import questions from './questions.json';
 
-export async function generateLeasePDF(): Promise<Uint8Array> {
+export async function generateLeasePDF(data: any): Promise<Uint8Array> {
   const pdfPath = path.join(process.cwd(), 'public', 'Combined_Condo_Lease.pdf');
   const existingPdfBytes = fs.readFileSync(pdfPath);
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
   const pages = pdfDoc.getPages();
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const fontSize = 10;
+
+  console.log("Filling lease with answers:", questions);
 
   for (const [field, value] of Object.entries(questions)) {
       const coords = leaseFieldCoordinates[field];

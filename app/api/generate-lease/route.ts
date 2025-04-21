@@ -1,14 +1,16 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { generateLeasePDF } from '@/lib/fillLease';
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   try {
-    const pdfBytes = await generateLeasePDF();
-    return new NextResponse(pdfBytes, {
+    const data = await req.json(); // receives the form data
+    const pdfBuffer = await generateLeasePDF(data); // pass data to the PDF generator
+
+    return NextResponse.from(pdfBuffer, {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename="rebny_lease.pdf"',
+        'Content-Disposition': 'attachment; filename="REBNY_Lease.pdf"',
       },
     });
   } catch (err) {
