@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+// @ts-ignore
 import questionsData from '../questions.json';
 
 type Question = {

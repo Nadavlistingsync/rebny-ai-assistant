@@ -4,7 +4,7 @@ import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 // @ts-ignore
 import { leaseFieldCoordinates } from './coordinates';
 // @ts-ignore
-import questions from './questions.json';
+import questions from './lib/questions.json';
 
 export async function generateLeasePDF(): Promise<Uint8Array> {
   const pdfPath = path.join(process.cwd(), 'public', 'Combined_Condo_Lease.pdf');
