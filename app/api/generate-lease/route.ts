@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { generateLeasePDF } from '@/lib/fillLease';
+import { generateLeasePDF } from '../lib/fillLease';
 
 export async function POST() {
   try {

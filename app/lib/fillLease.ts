@@ -1,7 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+// @ts-ignore
 import { leaseFieldCoordinates } from './coordinates';
+// @ts-ignore
 import questions from '../generate-lease/questions.json';
 
 export async function generateLeasePDF(): Promise<Uint8Array> {
@@ -13,13 +15,13 @@ export async function generateLeasePDF(): Promise<Uint8Array> {
   const fontSize = 10;
 
   for (const [field, value] of Object.entries(questions)) {
-    const coords = leaseFieldCoordinates[field];
-    if (coords) {
-      pages[coords.page].drawText(value, {
+      pages[coords.page].drawText(String(value), {
         x: coords.x,
         y: coords.y,
         size: fontSize,
         font,
+        color: rgb(0, 0, 0),
+      });
         color: rgb(0, 0, 0),
       });
     }
