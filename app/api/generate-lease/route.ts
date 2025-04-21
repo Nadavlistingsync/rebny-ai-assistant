@@ -23,3 +23,12 @@ export async function POST(req: NextRequest) {
     });
   }
 }
+
+export async function GET() {
+  return new NextResponse('REBNY Lease API is live.', {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+  });
+}
