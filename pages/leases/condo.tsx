@@ -13,6 +13,10 @@ const CondoLeasePage = () => {
       // Create Stripe checkout session
       const checkoutUrl = await createCheckoutSession();
       
+      if (!checkoutUrl) {
+        throw new Error('Failed to create checkout session');
+      }
+
       // Send data to Plumsail
       await sendToPlumsail({
         ...formData,
