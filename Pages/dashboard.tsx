@@ -10,7 +10,7 @@ const Dashboard = () => {
           Thanks for your payment! Your lease document is being generated.
         </p>
         <p className="text-gray-700">
-          You’ll receive an email with the final PDF shortly, or you can revisit this page to download it once ready.
+          You'll receive an email with the final PDF shortly, or you can revisit this page to download it once ready.
         </p>
       </div>
     </Layout>
