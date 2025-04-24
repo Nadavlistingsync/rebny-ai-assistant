@@ -5,26 +5,17 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 });
 
 export async function createCheckoutSession() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nadavlistingsync.github.io/rebny-ai-assistant';
-  
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
-    mode: 'payment',
-    line_items: [
-      {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'REBNY Lease Generator Access',
-          },
-          unit_amount: 1000, // $10.00
-        },
-        quantity: 1,
-      },
-    ],
-    success_url: `${baseUrl}/dashboard`,
-    cancel_url: `${baseUrl}/`,
+  const response = await fetch('/api/create-checkout-session', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
   });
 
-  return session.url;
+  if (!response.ok) {
+    throw new Error('Failed to create checkout session');
+  }
+
+  const data = await response.json();
+  return data.url;
 }
