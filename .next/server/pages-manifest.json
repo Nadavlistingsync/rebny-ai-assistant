@@ -1,11 +1,11 @@
 {
-  "/_app": "pages/_app.js",
-  "/dashboard": "pages/dashboard.html",
-  "/_error": "pages/_error.js",
-  "/leases/condo": "pages/leases/condo.html",
   "/": "pages/index.html",
-  "/leases/coop": "pages/leases/coop.html",
+  "/dashboard": "pages/dashboard.html",
+  "/leases/condo": "pages/leases/condo.html",
   "/leases/rental": "pages/leases/rental.html",
+  "/leases/coop": "pages/leases/coop.html",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }
