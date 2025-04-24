@@ -4,6 +4,8 @@ const nextConfig = {
   images: {
     domains: [],
   },
+  output: 'export',
+  distDir: 'public'
 };
 
 module.exports = nextConfig;
