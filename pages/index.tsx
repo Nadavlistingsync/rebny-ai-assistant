@@ -95,6 +95,27 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Call-to-Action Section */}
+      <div className="bg-blue-50 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Ready to streamline your leasing process?
+            <br />
+            <span className="text-blue-600">Start your lease in minutes</span>
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Our AI-powered tools simplify every step.
+          </p>
+          <div className="mt-6">
+            <Link href="/dashboard">
+              <a className="inline-block px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow hover:bg-blue-700 transition">
+                Start My Lease
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Simple Footer */}
       <div className="bg-gray-50 py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
