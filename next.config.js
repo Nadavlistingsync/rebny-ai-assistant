@@ -5,7 +5,7 @@ const nextConfig = {
     domains: [],
   },
   output: 'export',
-  distDir: 'public'
+  distDir: '.next'
 };
 
 module.exports = nextConfig;
