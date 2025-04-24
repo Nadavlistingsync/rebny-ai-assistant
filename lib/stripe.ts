@@ -5,6 +5,8 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 });
 
 export async function createCheckoutSession() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nadavlistingsync.github.io/rebny-ai-assistant';
+  
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     mode: 'payment',
@@ -20,8 +22,8 @@ export async function createCheckoutSession() {
         quantity: 1,
       },
     ],
-    success_url: 'http://localhost:3000/dashboard',
-    cancel_url: 'http://localhost:3000/',
+    success_url: `${baseUrl}/dashboard`,
+    cancel_url: `${baseUrl}/`,
   });
 
   return session.url;
