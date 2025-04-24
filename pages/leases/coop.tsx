@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import LeaseForm from '../../components/LeaseForm';
+import { createCheckoutSession } from '../../lib/stripe';
+import { sendToPlumsail } from '../../lib/plumsail';
 
 const CoopLeasePage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (formData: any) => {
+    setIsLoading(true);
+    try {
+      // Create Stripe checkout session
+      const checkoutUrl = await createCheckoutSession();
+      
+      // Send data to Plumsail
+      await sendToPlumsail({
+        ...formData,
+        leaseType: 'coop'
+      });
+
+      // Redirect to Stripe checkout
+      window.location.href = checkoutUrl;
+    } catch (error) {
+      console.error('Error:', error);
+      setIsLoading(false);
+    }
+  };
+
   return (
     <Layout>
       <div className="max-w-3xl mx-auto py-10 px-4">
@@ -10,8 +34,7 @@ const CoopLeasePage = () => {
         <p className="text-gray-600 mb-4">
           Fill out the lease information below. You'll be asked to pay before the lease is generated.
         </p>
-        <LeaseForm />
-        {/* Stripe payment and submission logic will go here */}
+        <LeaseForm onSubmit={handleSubmit} type="coop" />
       </div>
     </Layout>
   );
