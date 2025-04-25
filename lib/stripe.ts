@@ -13,9 +13,15 @@ export async function createCheckoutSession() {
   });
 
   if (!response.ok) {
-    throw new Error('Failed to create checkout session');
+    throw new Error('Failed to process request');
   }
 
   const data = await response.json();
+  
+  // Show message if provided
+  if (data.message) {
+    alert(data.message);
+  }
+  
   return data.url;
 }

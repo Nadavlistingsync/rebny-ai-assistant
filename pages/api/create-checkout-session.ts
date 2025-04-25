@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { stripe } from '@/lib/stripe';
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,29 +8,9 @@ export default async function handler(
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  try {
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      mode: 'payment',
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'REBNY Lease Generator Access',
-            },
-            unit_amount: 1000, // $10.00
-          },
-          quantity: 1,
-        },
-      ],
-      success_url: `${req.headers.origin}/dashboard`,
-      cancel_url: `${req.headers.origin}/`,
-    });
-
-    res.status(200).json({ url: session.url });
-  } catch (error) {
-    console.error('Error creating checkout session:', error);
-    res.status(500).json({ message: 'Error creating checkout session' });
-  }
+  // Temporary response until Stripe is set up
+  res.status(200).json({ 
+    url: '/dashboard',
+    message: 'Payment processing coming soon! Redirecting to dashboard...'
+  });
 }
