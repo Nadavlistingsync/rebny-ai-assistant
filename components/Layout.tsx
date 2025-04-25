@@ -14,22 +14,55 @@ const Layout = ({ children }: Props) => {
           {children}
         </div>
       </main>
-      <footer className="bg-white border-t border-gray-200 py-6 mt-12">
+      <footer className="bg-white border-t border-gray-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <div className="text-sm text-gray-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">REBNY Lease AI</h3>
+              <p className="text-gray-600">
+                Professional lease generation powered by artificial intelligence.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/leases/condo" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    Condo Leases
+                  </a>
+                </li>
+                <li>
+                  <a href="/leases/coop" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    Co-op Leases
+                  </a>
+                </li>
+                <li>
+                  <a href="/leases/rental" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    Rental Leases
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-600">
+                  <a href="mailto:support@rebnyleaseai.com" className="hover:text-blue-600 transition-colors">
+                    support@rebnyleaseai.com
+                  </a>
+                </li>
+                <li className="text-gray-600">
+                  <a href="tel:+12125551234" className="hover:text-blue-600 transition-colors">
+                    (212) 555-1234
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <p className="text-center text-gray-500">
               © {new Date().getFullYear()} REBNY Lease AI. All rights reserved.
-            </div>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-500 transition-colors">
-                <span className="sr-only">Privacy Policy</span>
-                Privacy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500 transition-colors">
-                <span className="sr-only">Terms</span>
-                Terms
-              </a>
-            </div>
+            </p>
           </div>
         </div>
       </footer>

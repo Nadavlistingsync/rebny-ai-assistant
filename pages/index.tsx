@@ -4,124 +4,104 @@ import Layout from '../components/Layout';
 export default function Home() {
   return (
     <Layout>
-      {/* Modern Hero Section */}
-      <div className="bg-gradient-to-br from-white to-blue-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-blue-900 to-blue-800 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
-              REBNY Leases <span className="text-blue-600">On The Go</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+              <span className="block">REBNY Lease Generation</span>
+              <span className="block text-blue-200 mt-2">Powered by AI</span>
             </h1>
-            <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-              Generate professional lease agreements instantly with our AI-powered platform
+            <p className="mt-6 max-w-2xl mx-auto text-xl text-blue-100">
+              Generate professional, legally-compliant REBNY leases in minutes. Our AI-powered system handles the paperwork while you focus on closing deals.
+            </p>
+            <div className="mt-10">
+              <Link href="/leases/condo">
+                <a className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-blue-900 bg-white hover:bg-blue-50 transition-colors duration-200">
+                  Start Your Lease
+                  <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Streamline Your Lease Process
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Everything you need to generate professional REBNY leases quickly and efficiently.
             </p>
           </div>
-        </div>
-      </div>
 
-      {/* Modern Lease Options Grid */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <Link href="/leases/condo">
-            <a className="group">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-200">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600">Condo Lease</h2>
-                    <p className="mt-1 text-gray-600">Generate a condo lease agreement</p>
-                  </div>
+          <div className="mt-20">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Feature 1 */}
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">AI-Powered Generation</h3>
+                <p className="text-gray-600">Our advanced AI automatically fills your lease with accurate information, saving you hours of manual work.</p>
               </div>
-            </a>
-          </Link>
 
-          <Link href="/leases/coop">
-            <a className="group">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-200">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600">Co-op Lease</h2>
-                    <p className="mt-1 text-gray-600">Generate a co-op lease agreement</p>
-                  </div>
+              {/* Feature 2 */}
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Secure Payments</h3>
+                <p className="text-gray-600">Process payments securely through Stripe with instant confirmation and receipt generation.</p>
               </div>
-            </a>
-          </Link>
 
-          <Link href="/leases/rental">
-            <a className="group">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-200">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600">Rental Lease</h2>
-                    <p className="mt-1 text-gray-600">Generate a rental lease agreement</p>
-                  </div>
+              {/* Feature 3 */}
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">DocuSign Integration</h3>
+                <p className="text-gray-600">Seamlessly send completed leases to DocuSign for electronic signatures and secure document delivery.</p>
               </div>
-            </a>
-          </Link>
-
-          <Link href="/leases/townhome">
-            <a className="group">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-200">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600">Townhome Lease</h2>
-                    <p className="mt-1 text-gray-600">Generate a townhome lease agreement</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </Link>
-        </div>
-      </div>
-
-      {/* Call-to-Action Section */}
-      <div className="bg-blue-50 py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Ready to streamline your leasing process?
-            <br />
-            <span className="text-blue-600">Start your lease in minutes</span>
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Our AI-powered tools simplify every step.
-          </p>
-          <div className="mt-6">
-            <Link href="/dashboard">
-              <a className="inline-block px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow hover:bg-blue-700 transition">
-                Start My Lease
-              </a>
-            </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Simple Footer */}
-      <div className="bg-gray-50 py-8">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-600">
-            © {new Date().getFullYear()} REBNY Lease AI. All rights reserved.
-          </p>
+      {/* CTA Section */}
+      <div className="bg-blue-50 py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Ready to streamline your lease process?
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Join hundreds of real estate professionals who trust our platform for their lease generation needs.
+            </p>
+            <div className="mt-8">
+              <Link href="/leases/condo">
+                <a className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200">
+                  Get Started Now
+                  <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

@@ -9,7 +9,7 @@ export default async function handler(
   }
 
   // Temporary response until Stripe is set up
-  res.status(200).json({ 
+  return res.status(200).json({ 
     url: '/dashboard',
     message: 'Payment processing coming soon! Redirecting to dashboard...'
   });
