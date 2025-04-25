@@ -24,7 +24,7 @@ export default function Home() {
                   <div className="rounded-md shadow">
                     <button
                       onClick={() => router.push('/leases/condo')}
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark md:py-4 md:text-lg md:px-10"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors duration-200 md:py-4 md:text-lg md:px-10"
                     >
                       Start My Lease
                       <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -100,7 +100,7 @@ export default function Home() {
             <div className="inline-flex rounded-md shadow">
               <button
                 onClick={() => router.push('/leases/condo')}
-                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition-colors duration-200"
               >
                 Start My Lease
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
