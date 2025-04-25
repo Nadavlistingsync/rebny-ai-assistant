@@ -1,81 +1,122 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
+import { BoltIcon, ScaleIcon, DocumentCheckIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 
 export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="w-full flex items-center justify-between p-6 bg-white shadow-sm">
-        <h1 className="text-xl font-bold text-blue-600">REBNY Lease Generator</h1>
-        <button 
-          className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
-          onClick={() => router.push('/leases/condo')}
-        >
-          Start My Lease
-        </button>
-      </nav>
-
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 py-24">
-        <h1 className="text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-          Instantly Generate<br />Your REBNY Lease
-        </h1>
-        <p className="text-lg text-gray-600 mb-8">
-          Fill out your information, pay securely, and receive a completed lease via DocuSign — all in minutes.
-        </p>
-        <button 
-          className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-700 transition"
-          onClick={() => router.push('/leases/condo')}
-        >
-          Start Now <ArrowRightIcon className="w-5 h-5" />
-        </button>
-      </section>
+      <div className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <div className="sm:text-center lg:text-left">
+                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                  <span className="block">Generate Your</span>
+                  <span className="block text-primary">REBNY Lease</span>
+                </h1>
+                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                  Create professional, legally-compliant lease agreements in minutes. Our AI-powered system ensures accuracy and saves you hours of paperwork.
+                </p>
+                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                  <div className="rounded-md shadow">
+                    <button
+                      onClick={() => router.push('/leases/condo')}
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark md:py-4 md:text-lg md:px-10"
+                    >
+                      Start My Lease
+                      <ArrowRightIcon className="ml-2 h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
 
       {/* Features Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6 grid gap-12 md:grid-cols-3">
-          <div className="flex flex-col items-center text-center">
-            <CheckCircleIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Simple Form</h3>
-            <p className="text-gray-600">Fill out one simple form with tenant and lease info.</p>
+      <div className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base text-primary font-semibold tracking-wide uppercase">Features</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Everything you need to create perfect leases
+            </p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <CheckCircleIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Secure Payment</h3>
-            <p className="text-gray-600">Pay easily with Stripe — your data is safe and encrypted.</p>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <CheckCircleIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Instant Delivery</h3>
-            <p className="text-gray-600">Get your fully signed lease via DocuSign automatically.</p>
-          </div>
-        </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="bg-blue-50 py-20">
-        <div className="text-center max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Generate Your Lease?
-          </h2>
-          <p className="text-gray-600 mb-8">
-            It takes less than 5 minutes. Start now and save hours of paperwork.
-          </p>
-          <button 
-            className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-700 transition"
-            onClick={() => router.push('/leases/condo')}
-          >
-            Start My Lease <ArrowRightIcon className="w-5 h-5" />
-          </button>
+          <div className="mt-10">
+            <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                  <BoltIcon className="h-6 w-6" />
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg leading-6 font-medium text-gray-900">Fast Lease Creation</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Generate professional lease agreements in minutes, not hours. Our streamlined process saves you time and effort.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                  <ScaleIcon className="h-6 w-6" />
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg leading-6 font-medium text-gray-900">Legally Accurate</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    All leases are created with up-to-date REBNY standards and legal requirements, ensuring compliance and protection.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                  <DocumentCheckIcon className="h-6 w-6" />
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg leading-6 font-medium text-gray-900">Instant eSign via DocuSign</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Get your lease signed quickly and securely through DocuSign integration, with automatic delivery to all parties.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-primary">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span className="block">Ready to get started?</span>
+            <span className="block text-primary-200">Let's build your lease now.</span>
+          </h2>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <button
+                onClick={() => router.push('/leases/condo')}
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50"
+              >
+                Start My Lease
+                <ArrowRightIcon className="ml-2 h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Footer */}
-      <footer className="text-center text-gray-500 text-sm py-6">
-        © 2025 REBNY Lease Generator. All rights reserved.
+      <footer className="bg-white">
+        <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+          <p className="mt-8 text-center text-base text-gray-400">
+            &copy; 2025 REBNY Lease Generator. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
