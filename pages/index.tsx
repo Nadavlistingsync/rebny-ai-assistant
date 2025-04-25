@@ -10,7 +10,7 @@ import {
   LockClosedIcon, 
   ArrowRightIcon,
   CheckCircleIcon
-} from '@heroicons/react/24/outline'
+} from '@heroicons/react/outline'
 
 export default function Home() {
   return (
