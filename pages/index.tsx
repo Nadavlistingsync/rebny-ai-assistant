@@ -23,7 +23,7 @@ export default function Home() {
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
                     <button
-                      onClick={() => router.push('/leases/condo')}
+                      onClick={() => router.push('/dashboard')}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors duration-200 md:py-4 md:text-lg md:px-10"
                     >
                       Start My Lease
@@ -99,7 +99,7 @@ export default function Home() {
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
               <button
-                onClick={() => router.push('/leases/condo')}
+                onClick={() => router.push('/dashboard')}
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition-colors duration-200"
               >
                 Start My Lease

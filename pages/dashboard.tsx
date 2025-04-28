@@ -1,20 +1,26 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-const Dashboard = () => {
-  return (
-    <Layout>
-      <div className="max-w-2xl mx-auto py-10 px-4">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Your Dashboard</h1>
-        <p className="text-gray-700 mb-2">
-          Thanks for your payment! Your lease document is being generated.
-        </p>
-        <p className="text-gray-700">
-          You'll receive an email with the final PDF shortly, or you can revisit this page to download it once ready.
-        </p>
+const stats = [
+  { label: 'Leases Generated', value: 128 },
+  { label: 'Active Users', value: 42 },
+  { label: 'Documents Signed', value: 87 },
+];
+
+const Dashboard = () => (
+  <Layout>
+    <div className="max-w-4xl mx-auto py-16 px-4">
+      <h1 className="text-3xl font-bold mb-8 text-center">Dashboard</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {stats.map((stat) => (
+          <div key={stat.label} className="bg-white rounded-xl shadow p-6 text-center">
+            <div className="text-4xl font-extrabold text-blue-600 mb-2">{stat.value}</div>
+            <div className="text-lg text-gray-700">{stat.label}</div>
+          </div>
+        ))}
       </div>
-    </Layout>
-  );
-};
+    </div>
+  </Layout>
+);
 
 export default Dashboard; 
