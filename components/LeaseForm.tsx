@@ -138,7 +138,10 @@ const LeaseForm = ({ onSubmit, type }: LeaseFormProps) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          leaseType: type
+        })
       });
 
       if (!response.ok) {

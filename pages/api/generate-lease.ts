@@ -6,7 +6,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const response = await fetch('https://us-api.plumsail.com/api/v2/processes/ekqgxhkp/pxqngyj/start', {
+    const { leaseType } = req.body;
+    let endpoint = '';
+
+    switch (leaseType) {
+      case 'condo':
+        endpoint = 'https://us-api.plumsail.com/api/v2/processes/ekqgxhkp/pxqngyj/start';
+        break;
+      case 'townhouse':
+        endpoint = 'https://us-api.plumsail.com/api/v2/processes/ekqgxhkp/awaconr/start';
+        break;
+      case 'coop':
+        endpoint = 'https://us-api.plumsail.com/api/v2/processes/ekqgxhkp/pxqngyj/start';
+        break;
+      case 'rental':
+        endpoint = 'https://us-api.plumsail.com/api/v2/processes/ekqgxhkp/pxqngyj/start';
+        break;
+      default:
+        return res.status(400).json({ message: 'Invalid lease type' });
+    }
+
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
