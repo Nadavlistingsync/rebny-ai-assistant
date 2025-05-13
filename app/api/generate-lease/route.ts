@@ -49,8 +49,14 @@ export async function POST(req: NextRequest) {
         'Content-Disposition': 'attachment; filename="rebny_lease.pdf"',
       },
     })
-  } catch (error: any) {
-    console.error('Error generating lease:', error)
-    return NextResponse.json({ error: 'Failed to generate lease', details: error?.message || error }, { status: 500 })
+  } catch (error: unknown) {
+    let errorMessage = 'Unknown error';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    } else if (typeof error === 'string') {
+      errorMessage = error;
+    }
+    console.error('Error generating lease:', error);
+    return NextResponse.json({ error: 'Failed to generate lease', details: errorMessage }, { status: 500 });
   }
 }
